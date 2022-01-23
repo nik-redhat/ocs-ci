@@ -205,7 +205,7 @@ def drain_nodes(node_names):
     try:
         ocp.exec_oc_cmd(
             f"adm drain {node_names_str} --force=true --ignore-daemonsets "
-            f"--delete-local-data",
+            f"--delete-emptydir-data",
             timeout=1800,
         )
     except TimeoutExpired:
